@@ -6,23 +6,58 @@
     <title>Form Validation</title>
     <script>
         $(document).ready(function(){
+            // When they click the submit button, validate the fields
             $("#submit").click(function(){
+                // First name -> must be entered
                 if($("#fname").val().length === 0){
                     $("#fname").css({"background-color": "red"});
-                    $("#fnameE").css({"display":"block"});
+                    $("#fnameE").css({"display": "block"});
+                    $("#fname").css({"color": "white"});
                 }else{
                     $("#fname").css({"background-color": "white"});
-                    $("#fnameE").css({"display":"block"});
+                    $("#fnameE").css({"display": "none"});
+                    $("#phone").css({"color": "black"});
                 }
 
+                // Phone needs to match a filter
                 var phone_filter = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
                 if(!phone_filter.test($("#phone").val())){
                     $("#phone").css({"background-color": "red"});
-                    $("#phoneE").css({"display":"block"});
+                    $("#phoneE").css({"display": "block"});
+                    $("#phone").css({"color": "white"});
                 }else{
                     $("#phone").css({"background-color": "white"});
-                    $("#phoneE").css({"display":"block"});
+                    $("#phoneE").css({"display": "none"});
+                    $("#phone").css({"color": "black"});
                 }
+
+                // Email needs to match a filter
+                email_filter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if(!email_filter.test($("#email").val())){
+                    $("#email").css({"background-color": "red"});
+                    $("#emailE").css({"display": "block"});
+                    $("#email").css({"color": "white"});
+                }else{
+                    $("#email").css({"background-color": "white"});
+                    $("#emailE").css({"display": "none"});
+                    $("#email").css({"color": "black"});
+                }
+
+                // Password rules: at least 8 characters and must match confirm password
+                if($("#password").val().length < 8 || $("#password").val() !== $("#password2").val()){
+                    $("#password").css({"background-color": "red"});
+                    $("#password").css({"color": "white"});
+                    $("#password2").css({"background-color": "red"});
+                    $("#password2").css({"color": "white"});
+                    $("#passwordE").css({"display": "block"});
+                }else{
+                    $("#password").css({"background-color": "white"});
+                    $("#password").css({"color": "black"});
+                    $("#passwordE").css({"display": "none"});
+                    $("#password2").css({"background-color": "white"});
+                    $("#password2").css({"color": "black"});
+                }
+
             });
         });
     </script>
@@ -102,7 +137,7 @@
     <input type="text" name="city" id="zip" /><br />
 
     <label for="phone">Phone</label>
-    <input type="text" name="phone" id="phone" /><br />
+    <input type="text" name="phone" id="phone" placeholder="123-123-1234" /><br />
     <div id="phoneE" style="display:none">Please enter a valid phone number.</div>
 
     <label for="email">Email</label>
@@ -116,7 +151,9 @@
     <input type="text" name="username" id="username" /><br />
 
     <label for="password">Password</label>
-    <input type="text" name="password" id="password" /><br />
+    <input type="text" name="password" id="password" />
+    <div id="passwordE" style="display:none">Password must be at least 8 characters.  Password and confirm password must match</div>
+    <br />
 
     <label for="password2">Confirm Password</label>
     <input type="text" name="password2" id="password2" /><br />
