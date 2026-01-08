@@ -16,9 +16,63 @@
                 }else{
                     $("#fname").css({"background-color": "white"});
                     $("#fnameE").css({"display": "none"});
-                    $("#phone").css({"color": "black"});
+                    $("#fname").css({"color": "black"});
                 }
-
+                // Last name
+                if($("#lname").val().length === 0){
+                    $("#lname").css({"background-color": "red"});
+                    $("#lnameE").css({"display": "block"});
+                    $("#lname").css({"color": "white"});
+                }
+                else{
+                    $("#lname").css({"background-color": "white"});
+                    $("#lnameE").css({"display": "none"});
+                    $("#lname").css({"color": "black"});
+                }
+                // Street Address
+                if($("#street").val().length === 0){
+                    $("#street").css({"background-color": "red"});
+                    $("#streetE").css({"display": "block"});
+                    $("#street").css({"color": "white"});
+                }
+                else{
+                    $("#street").css({"background-color": "white"});
+                    $("#streetE").css({"display": "none"});
+                    $("#street").css({"color": "black"});
+                }
+                // Address
+                if($("#street2").val().length === 0){
+                    $("#street2").css({"background-color": "red"});
+                    $("#streetE").css({"display": "block"});
+                    $("#street2").css({"color": "white"});
+                }
+                else{
+                    $("#street2").css({"background-color": "white"});
+                    $("#streetE").css({"display": "none"});
+                    $("#street2").css({"color": "black"});
+                }
+                // City
+                if($("#city").val().length === 0){
+                    $("#city").css({"background-color": "red"});
+                    $("#cityE").css({"display": "block"});
+                    $("#city2").css({"color": "white"});
+                }
+                else{
+                    $("#city").css({"background-color": "white"});
+                    $("#cityE").css({"display": "none"});
+                    $("#city").css({"color": "black"});
+                }
+                //Zip
+                if($("#zip").val().length === 0){
+                    $("#zip").css({"background-color": "red"});
+                    $("#zipE").css({"display": "block"});
+                    $("#zip").css({"color": "white"});
+                }
+                else{
+                    $("#zip").css({"background-color": "white"});
+                    $("#zipE").css({"display": "none"});
+                    $("#zip").css({"color": "black"});
+                }
                 // Phone needs to match a filter
                 var phone_filter = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
                 if(!phone_filter.test($("#phone").val())){
@@ -30,7 +84,6 @@
                     $("#phoneE").css({"display": "none"});
                     $("#phone").css({"color": "black"});
                 }
-
                 // Email needs to match a filter
                 email_filter = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
                 if(!email_filter.test($("#email").val())){
@@ -41,6 +94,17 @@
                     $("#email").css({"background-color": "white"});
                     $("#emailE").css({"display": "none"});
                     $("#email").css({"color": "black"});
+                }
+                //DOB
+                if($("#dob").val().length === 0){
+                    $("#dob").css({"background-color": "red"});
+                    $("#dobE").css({"display": "block"});
+                    $("#dob2").css({"color": "white"});
+                }
+                else{
+                    $("#dob").css({"background-color": "white"});
+                    $("#dobE").css({"display": "none"});
+                    $("#dob").css({"color": "black"});
                 }
 
                 // Password rules: at least 8 characters and must match confirm password
