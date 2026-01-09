@@ -95,7 +95,7 @@
                     $("#emailE").css({"display": "none"});
                     $("#email").css({"color": "black"});
                 }
-                //DOB
+                // DOB
                 if($("#dob").val().length === 0){
                     $("#dob").css({"background-color": "red"});
                     $("#dobE").css({"display": "block"});
@@ -105,6 +105,17 @@
                     $("#dob").css({"background-color": "white"});
                     $("#dobE").css({"display": "none"});
                     $("#dob").css({"color": "black"});
+                }
+                // Username
+                if($("#username").val().length === 0){
+                    $("#username").css({"background-color": "red"});
+                    $("#usernameE").css({"display": "block"});
+                    $("#username").css({"color": "white"});
+                }
+                else{
+                    $("#username").css({"background-color": "white"});
+                    $("#usernameE").css({"display": "none"});
+                    $("#username").css({"color": "black"});
                 }
 
                 // Password rules: at least 8 characters and must match confirm password
